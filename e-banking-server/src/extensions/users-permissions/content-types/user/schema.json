@@ -66,15 +66,13 @@
       "configurable": false
     },
     "postal": {
-      "type": "biginteger",
-      "required": true
+      "type": "string"
     },
     "phone": {
       "type": "string"
     },
     "country": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "cards": {
       "type": "relation",

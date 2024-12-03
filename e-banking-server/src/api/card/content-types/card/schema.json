@@ -24,11 +24,10 @@
     "balance": {
       "type": "decimal"
     },
-    "ccv": {
-      "type": "string",
-      "required": false
-    },
     "type": {
+      "type": "string"
+    },
+    "ccv": {
       "type": "string"
     },
     "user": {
@@ -36,6 +35,12 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "cards"
+    },
+    "transactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaction.transaction",
+      "mappedBy": "card"
     }
   }
 }

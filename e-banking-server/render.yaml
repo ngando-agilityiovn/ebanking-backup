@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: e-banking-server
+    env: node
+    runtime: node 20
+    buildCommand: yarn build
+    startCommand: yarn start
