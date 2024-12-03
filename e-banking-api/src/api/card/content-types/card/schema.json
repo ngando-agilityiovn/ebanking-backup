@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {
+    "singularName": "card",
+    "pluralName": "cards",
+    "displayName": "Cards",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "holderName": {
+      "type": "string"
+    },
+    "cardNumber": {
+      "type": "string"
+    },
+    "expireAt": {
+      "type": "string"
+    },
+    "balance": {
+      "type": "decimal"
+    },
+    "ccv": {
+      "type": "string",
+      "required": false
+    },
+    "type": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "cards"
+    }
+  }
+}
