@@ -18,20 +18,20 @@
     "amount": {
       "type": "decimal"
     },
-    "fromCardId": {
-      "type": "integer"
-    },
-    "toCardId": {
-      "type": "integer"
-    },
     "statusTransaction": {
       "type": "boolean"
     },
-    "card": {
+    "account": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::card.card",
+      "target": "api::account.account",
       "inversedBy": "transactions"
+    },
+    "fromCardId": {
+      "type": "string"
+    },
+    "toCardId": {
+      "type": "string"
     }
   }
 }

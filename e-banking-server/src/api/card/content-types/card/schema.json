@@ -21,26 +21,17 @@
     "expireAt": {
       "type": "string"
     },
-    "balance": {
-      "type": "decimal"
-    },
-    "type": {
-      "type": "string"
-    },
     "ccv": {
       "type": "string"
     },
-    "user": {
+    "fullName": {
+      "type": "string"
+    },
+    "account": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
+      "target": "api::account.account",
       "inversedBy": "cards"
-    },
-    "transactions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::transaction.transaction",
-      "mappedBy": "card"
     }
   }
 }

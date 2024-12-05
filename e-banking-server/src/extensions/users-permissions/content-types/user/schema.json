@@ -74,11 +74,14 @@
     "country": {
       "type": "string"
     },
-    "cards": {
+    "accounts": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::card.card",
+      "target": "api::account.account",
       "mappedBy": "user"
+    },
+    "avatar": {
+      "type": "text"
     }
   }
 }
