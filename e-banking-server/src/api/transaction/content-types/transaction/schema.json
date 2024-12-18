@@ -27,10 +27,10 @@
       "target": "api::account.account",
       "inversedBy": "transactions"
     },
-    "fromCardId": {
+    "fromAccountId": {
       "type": "string"
     },
-    "toCardId": {
+    "toAccountId": {
       "type": "string"
     },
     "toAccountType": {
