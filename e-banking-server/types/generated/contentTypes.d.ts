@@ -935,6 +935,7 @@ export interface PluginUsersPermissionsUser
   };
   attributes: {
     accounts: Schema.Attribute.Relation<'oneToMany', 'api::account.account'>;
+    announcements: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     avatar: Schema.Attribute.Text;
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
@@ -948,6 +949,12 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    events: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    eventsNearMe: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    feedbacksAndSurvey: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    generalNotification: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -961,6 +968,7 @@ export interface PluginUsersPermissionsUser
       }>;
     phone: Schema.Attribute.String;
     postal: Schema.Attribute.String;
+    promotions: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;
@@ -971,6 +979,7 @@ export interface PluginUsersPermissionsUser
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    updates: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     username: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &

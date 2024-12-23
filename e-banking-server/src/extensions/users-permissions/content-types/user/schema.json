@@ -82,6 +82,34 @@
     },
     "avatar": {
       "type": "text"
+    },
+    "announcements": {
+      "type": "boolean",
+      "default": true
+    },
+    "updates": {
+      "type": "boolean",
+      "default": true
+    },
+    "feedbacksAndSurvey": {
+      "type": "boolean",
+      "default": true
+    },
+    "events": {
+      "type": "boolean",
+      "default": true
+    },
+    "generalNotification": {
+      "type": "boolean",
+      "default": true
+    },
+    "promotions": {
+      "type": "boolean",
+      "default": true
+    },
+    "eventsNearMe": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
