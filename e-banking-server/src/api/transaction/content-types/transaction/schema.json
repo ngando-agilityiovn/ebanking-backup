@@ -35,6 +35,10 @@
     },
     "toAccountType": {
       "type": "string"
+    },
+    "recipientName": {
+      "type": "string",
+      "required": false
     }
   }
 }

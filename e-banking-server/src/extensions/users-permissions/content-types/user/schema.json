@@ -74,12 +74,6 @@
     "country": {
       "type": "string"
     },
-    "accounts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::account.account",
-      "mappedBy": "user"
-    },
     "avatar": {
       "type": "text"
     },
@@ -110,6 +104,12 @@
     "eventsNearMe": {
       "type": "boolean",
       "default": true
+    },
+    "accounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::account.account",
+      "mappedBy": "user"
     }
   }
 }

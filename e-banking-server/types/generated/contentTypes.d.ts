@@ -442,6 +442,39 @@ export interface ApiCardCard extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGlobalAccountGlobalAccount
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'global_accounts';
+  info: {
+    description: '';
+    displayName: 'Global Account';
+    pluralName: 'global-accounts';
+    singularName: 'global-account';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    accountNumber: Schema.Attribute.String & Schema.Attribute.Required;
+    balance: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    currency: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::global-account.global-account'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTransactionTransaction extends Struct.CollectionTypeSchema {
   collectionName: 'transactions';
   info: {
@@ -468,6 +501,7 @@ export interface ApiTransactionTransaction extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    recipientName: Schema.Attribute.String;
     statusTransaction: Schema.Attribute.Boolean;
     toAccountId: Schema.Attribute.String;
     toAccountType: Schema.Attribute.String;
@@ -1001,6 +1035,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::account.account': ApiAccountAccount;
       'api::card.card': ApiCardCard;
+      'api::global-account.global-account': ApiGlobalAccountGlobalAccount;
       'api::transaction.transaction': ApiTransactionTransaction;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
